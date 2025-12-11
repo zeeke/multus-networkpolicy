@@ -112,6 +112,10 @@ func run() error {
 	commonRules.AcceptICMP = acceptICMP
 	commonRules.AcceptICMPv6 = acceptICMPv6
 
+	// TODO: put this in ClusterNetworkOperator
+	commonRules.AcceptICMP = true
+	commonRules.AcceptICMPv6 = true
+
 	setupLog.Info("Common rules applied to all pods affected ny MultinetPolicies", "rules", commonRules)
 
 	ctx := ctrl.SetupSignalHandler()
